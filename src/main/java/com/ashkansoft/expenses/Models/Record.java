@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -20,10 +20,10 @@ public class Record {
     
     private BigDecimal amount;
     
-	@OneToOne
+	@ManyToOne
     private Source source;
     
-	@OneToOne
+	@ManyToOne
     private Currency currency;
     
     private String goods;

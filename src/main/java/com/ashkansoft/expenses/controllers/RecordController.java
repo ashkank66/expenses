@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ashkansoft.expenses.Models.Record;
 import com.ashkansoft.expenses.Models.DTO.CreateRecordDTO;
 
-import com.ashkansoft.expenses.BusinessLogics.Logic;
+import com.ashkansoft.expenses.BusinessLogics.RecordService;
 
 @RestController
 public class RecordController {
 	
 	@Autowired
-	Logic logic; 
+	RecordService recordService; 
 
 	@PostMapping("/createRecord")
 	public void createRecord(@RequestBody CreateRecordDTO createRecordDTO) {
 //		System.out.println(createRecordDTO.toString());
-		logic.saveRecord(createRecordDTO);
+		recordService.saveRecord(createRecordDTO);
 	}
 	
 }
